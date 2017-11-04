@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Meal:</strong>
+  <%= @record.meal %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @record.time %>
+</p>
+
+<p>
+  <strong>Left:</strong>
+  <%= @record.left %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>

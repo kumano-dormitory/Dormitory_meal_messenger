@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @meal.date %>
+</p>
+
+<p>
+  <strong>Time zone:</strong>
+  <%= @meal.time_zone %>
+</p>
+
+<p>
+  <strong>Menu:</strong>
+  <%= @meal.menu %>
+</p>
+
+<p>
+  <strong>Multi ticket price:</strong>
+  <%= @meal.multi_ticket_price %>
+</p>
+
+<p>
+  <strong>Single ticket price:</strong>
+  <%= @meal.single_ticket_price %>
+</p>
+
+<p>
+  <strong>Soldout:</strong>
+  <%= @meal.soldout %>
+</p>
+
+<%= link_to 'Edit', edit_meal_path(@meal) %> |
+<%= link_to 'Back', meals_path %>

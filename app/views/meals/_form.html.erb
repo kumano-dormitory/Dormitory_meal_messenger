@@ -1,0 +1,47 @@
+<%= form_with(model: meal, local: true) do |form| %>
+  <% if meal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meal.errors.count, "error") %> prohibited this meal from being saved:</h2>
+
+      <ul>
+      <% meal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :meal_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time_zone %>
+    <%= form.text_field :time_zone, id: :meal_time_zone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :menu %>
+    <%= form.text_field :menu, id: :meal_menu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :multi_ticket_price %>
+    <%= form.number_field :multi_ticket_price, id: :meal_multi_ticket_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :single_ticket_price %>
+    <%= form.number_field :single_ticket_price, id: :meal_single_ticket_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :soldout %>
+    <%= form.check_box :soldout, id: :meal_soldout %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
