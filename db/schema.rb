@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171104115423) do
+ActiveRecord::Schema.define(version: 20171105100104) do
 
   create_table "meals", force: :cascade do |t|
     t.date "date"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20171104115423) do
     t.boolean "soldout"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "time_zone_num"
   end
 
   create_table "records", force: :cascade do |t|
