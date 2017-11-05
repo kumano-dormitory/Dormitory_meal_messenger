@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :meal_id %>
-    <%= form.text_field :meal_id, id: :record_meal_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :time %>
     <%= form.time_select :time, id: :record_time %>
   </div>
@@ -27,6 +22,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "更新" %>
   </div>
 <% end %>
