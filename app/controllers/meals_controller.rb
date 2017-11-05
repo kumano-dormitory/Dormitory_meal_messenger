@@ -21,6 +21,11 @@ class MealsController < ApplicationController
   def edit
   end
 
+  # GET /top_page
+  def top_page
+    @meal = Meal.todays_meal.first
+  end
+    
   # POST /meals
   # POST /meals.json
   def create
