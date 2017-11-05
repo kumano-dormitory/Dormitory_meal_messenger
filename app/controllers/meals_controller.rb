@@ -23,7 +23,7 @@ class MealsController < ApplicationController
 
   # GET /top_page
   def top_page
-    @meal = Meal.todays_meal.first
+    @meal = Meal.todays_latest_meal
   end
     
   # POST /meals
