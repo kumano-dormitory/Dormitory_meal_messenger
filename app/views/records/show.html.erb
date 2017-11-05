@@ -15,5 +15,5 @@
   <%= @record.left %>
 </p>
 
-<%= link_to 'Edit', edit_record_path(@record) %> |
-<%= link_to 'Back', records_path %>
+<%= link_to '編集', edit_record_path(@record) %>
+<%= link_to 'トップ', { controller: :meals, action: :top_page } %>
