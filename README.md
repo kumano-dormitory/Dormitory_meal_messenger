@@ -34,7 +34,7 @@ SQLite >= 3.7.17
   ```
 
   ```sh
-  rbenv install 2.4.2
+  $ rbenv install 2.4.2
   ```
 
 * In the case of Mac OS
@@ -45,7 +45,7 @@ SQLite >= 3.7.17
   ```
 
   ```sh
-  rbenv install 2.4.2
+  $ rbenv install 2.4.2
   ```
 
 ### If you don't have bundler
