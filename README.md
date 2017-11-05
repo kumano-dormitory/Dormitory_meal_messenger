@@ -34,14 +34,12 @@ SQLite >= 3.7.17
   $ rbenv install 2.4.2
   ```
 
-
 * In the case of Mac OS
-
 
   ```sh
   $ brew install ruby-build
   $ brew install rbenv
-  rbenv install 2.4.2 
+  $ rbenv install 2.4.2
   ```
 
 
