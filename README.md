@@ -14,9 +14,10 @@ SQLite >= 3.7.17
   ```sh
   $ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
   $ cd ~/.rbenv && src/configure && make -C src
-  $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+  $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
   $ mkdir -p "$(rbenv root)"/plugins
   $ git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+  $ rbenv install 2.4.2
   ```
 
   Add this to .bashrc.
@@ -31,7 +32,6 @@ SQLite >= 3.7.17
 
   ```sh
   $ source .bashrc
-  $ rbenv install 2.4.2
   ```
 
 * In the case of Mac OS
@@ -47,6 +47,11 @@ SQLite >= 3.7.17
   if which rbenv > /dev/null; then
   eval "$(rbenv init -)";
   fi
+  ```
+  and
+  
+  ```sh
+  $ source .bash_profile
   ```
 
 ### If you don't have bundler
