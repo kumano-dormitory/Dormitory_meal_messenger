@@ -60,6 +60,6 @@ $ gem install bundler
 ```sh
 $ git clone git@github.com:kumano-dormitory/Dormitory_meal_messenger.git
 $ cd Dormitory_meal_messenger
-$ git checkout -b rails origin rails
+$ git checkout -b rails origin/rails
 $ bundle install --path vendor/bundle
 ```
