@@ -1,4 +1,4 @@
-<h1>Top</h1>
+<h1>Welcom to Kumano meal info page!</h1>
 
 <h2>本日の寮食</h2>
 
@@ -6,4 +6,5 @@
 
 <h2>最新の残食情報</h2>
 
-<p><%= @meal.soldout %></p>
+<p><%= @record.time.strftime('%H時%M分') %>：<%= @record.left %></p>
+

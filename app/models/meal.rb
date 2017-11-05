@@ -1,4 +1,5 @@
 class Meal < ApplicationRecord
+  has_many :records
   # ======= description about Meal table schema ===========
   # time_zone_num column is correspond to time_zone
   # breakfirst = 0

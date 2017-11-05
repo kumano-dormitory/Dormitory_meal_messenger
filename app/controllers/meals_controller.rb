@@ -25,6 +25,7 @@ class MealsController < ApplicationController
   # GET /top_page
   def top_page
     @meal = Meal.todays_latest_meal
+    @record = @meal.records.latest_record
   end
   
   # POST /meals
@@ -80,9 +81,7 @@ class MealsController < ApplicationController
                                    :time_zone,
                                    :menu,
                                    :soldout)
-    p '!!!!!!! params is ', m_params
-    p '!!!!!!! m_params[:time_zone] is ', m_params[:time_zone]
-    
+
     m_params[:time_zone_num] = meal_time_zone_number(m_params[:time_zone])
     m_params[:single_ticket_price] = single_ticket_price(m_params[:time_zone])
     m_params[:multi_ticket_price] = multi_ticket_price(m_params[:time_zone])
