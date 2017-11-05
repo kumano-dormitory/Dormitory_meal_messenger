@@ -26,7 +26,7 @@ class MealsController < ApplicationController
   def top_page
     @meal = Meal.todays_latest_meal
   end
-    
+  
   # POST /meals
   # POST /meals.json
   def create
@@ -68,32 +68,57 @@ class MealsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_meal
-      @meal = Meal.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_meal
+    @meal = Meal.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def meal_params
-      m_params =
-        params.require(:meal).permit(:date,
-                                     :time_zone,
-                                     :menu,
-                                     :multi_ticket_price,
-                                     :single_ticket_price,
-                                     :soldout)
-      m_params[:time_zone_num] = meal_time_zone(m_params[:time_zone])
-      m_params
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def meal_params
+    m_params =
+      params.require(:meal).permit(:date,
+                                   :time_zone,
+                                   :menu,
+                                   :soldout)
+    p '!!!!!!! params is ', m_params
+    p '!!!!!!! m_params[:time_zone] is ', m_params[:time_zone]
+    
+    m_params[:time_zone_num] = meal_time_zone_number(m_params[:time_zone])
+    m_params[:single_ticket_price] = single_ticket_price(m_params[:time_zone])
+    m_params[:multi_ticket_price] = multi_ticket_price(m_params[:time_zone])
+    m_params
+  end
 
-    def meal_time_zone_num(meal_time_zone)
-      case meal_time_zone
-      when '朝食' then
-        0
-      when '昼食' then
-        1
-      when '夕食' then
-        2
-      end
+  def meal_time_zone_number(meal_time_zone)
+    case meal_time_zone
+    when '朝食' then
+      Constants::BREAKFIRST_NUM
+    when '昼食' then
+      Constants::LUNCH_NUM
+    when '夕食' then
+      Constants::DINEER_NUM
     end
+  end
+
+  def single_ticket_price(meal_time_zone)
+    case meal_time_zone
+    when '朝食' then
+      Constants::BREAKFIRST_SINGLE_TICKET
+    when '昼食' then
+      Constants::LUNCH_SINGLE_TICKET
+    when '夕食' then
+      Constants::DINEER_SINGLE_TICKET
+    end
+  end
+
+  def multi_ticket_price(meal_time_zone)
+    case meal_time_zone
+    when '朝食' then
+      Constants::BREAKFIRST_MULTI_TICKET
+    when '昼食' then
+      Constants::LUNCH_MULTI_TICKET
+    when '夕食' then
+      Constants::DINEER_MULTI_TICKET
+    end
+  end
 end
