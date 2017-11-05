@@ -6,4 +6,5 @@ class Meal < ApplicationRecord
   # dinner = 2
   # ===============================================
   scope :todays_meal, -> { where(date: Time.now.to_date) }
+  scope :todays_latest_meal, -> { todays_meal.order(:time_zone_num).last }
 end
