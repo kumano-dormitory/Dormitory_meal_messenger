@@ -1,3 +1,4 @@
+# coding: utf-8
 class MealsController < ApplicationController
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
 
@@ -74,6 +75,25 @@ class MealsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meal_params
-      params.require(:meal).permit(:date, :time_zone, :menu, :multi_ticket_price, :single_ticket_price, :soldout)
+      m_params =
+        params.require(:meal).permit(:date,
+                                     :time_zone,
+                                     :menu,
+                                     :multi_ticket_price,
+                                     :single_ticket_price,
+                                     :soldout)
+      m_params[:time_zone_num] = meal_time_zone(m_params[:time_zone])
+      m_params
+    end
+
+    def meal_time_zone_num(meal_time_zone)
+      case meal_time_zone
+      when '朝食' then
+        0
+      when '昼食' then
+        1
+      when '夕食' then
+        2
+      end
     end
 end
