@@ -1,6 +1,10 @@
 # Do-meal
 
-## Setup
+## Prerequisites
+
+```
+Node.js >= 6.x
+```
 
 ### If you don't have rbenv.
 
@@ -50,8 +54,11 @@ $ rbenv local 2.4.2
 $ gem install bundler
 ```
 
-### If you are ready
+## Install
 
 ```sh
+$ git clone git@github.com:kumano-dormitory/Dormitory_meal_messenger.git
+$ cd Dormitory_meal_messenger
+$ git checkout -b rails origin rails
 $ bundle install --path vendor/bundle
 ```
