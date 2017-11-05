@@ -95,7 +95,7 @@ class MealsController < ApplicationController
     when '昼食' then
       Constants::LUNCH_NUM
     when '夕食' then
-      Constants::DINEER_NUM
+      Constants::DINNER_NUM
     end
   end
 
@@ -106,7 +106,7 @@ class MealsController < ApplicationController
     when '昼食' then
       Constants::LUNCH_SINGLE_TICKET
     when '夕食' then
-      Constants::DINEER_SINGLE_TICKET
+      Constants::DINNER_SINGLE_TICKET
     end
   end
 
@@ -117,7 +117,7 @@ class MealsController < ApplicationController
     when '昼食' then
       Constants::LUNCH_MULTI_TICKET
     when '夕食' then
-      Constants::DINEER_MULTI_TICKET
+      Constants::DINNER_MULTI_TICKET
     end
   end
 end

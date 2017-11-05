@@ -10,5 +10,5 @@ module Constants
 
   BREAKFIRST_NUM           = 0
   LUNCH_NUM                = 1
-  DINEER_NUM               = 2
+  DINNER_NUM               = 2
 end
