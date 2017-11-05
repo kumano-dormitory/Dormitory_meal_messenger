@@ -31,22 +31,19 @@ SQLite >= 3.7.17
 
   ```sh
   $ source .bashrc
+  $ rbenv install 2.4.2
   ```
 
-  ```sh
-  $ rbenv install 2.4.2
-  ```
 
 * In the case of Mac OS
+
 
   ```sh
   $ brew install ruby-build
   $ brew install rbenv
+  rbenv install 2.4.2 
   ```
 
-  ```sh
-  $ rbenv install 2.4.2
-  ```
 
 ### If you don't have bundler
 
