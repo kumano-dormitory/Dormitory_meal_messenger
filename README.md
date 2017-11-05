@@ -41,9 +41,8 @@ SQLite >= 3.7.17
   $ brew install rbenv
   $ rbenv install 2.4.2
   ```
-
-  Add this to .bash_profile.
-
+  
+  Add this to .bash_profile.
   ```sh
   if which rbenv > /dev/null; then
   eval "$(rbenv init -)";
