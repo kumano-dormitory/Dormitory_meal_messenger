@@ -4,6 +4,7 @@
 
 ```
 Node.js >= 6.x
+SQLite >= 3.7.17
 ```
 
 ### If you don't have rbenv.
