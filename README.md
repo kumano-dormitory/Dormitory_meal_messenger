@@ -81,8 +81,8 @@ $ bundle install --path vendor/bundle
 | soldout | bool |
 
 
-record table
-| | |
+|record table| |
+| --- | --- |
 |meal-id| reference|
 |time| time|
 |left| int|
