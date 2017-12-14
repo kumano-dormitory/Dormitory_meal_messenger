@@ -1,34 +1,45 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Date:</strong>
+  <strong>日付:</strong>
   <%= @meal.date %>
 </p>
 
 <p>
-  <strong>Time zone:</strong>
-  <%= @meal.time_zone %>
+  <strong>時間帯:</strong>
+  <% case @meal.time_zone_num %>
+  <% when Constants::BREAKFIRST_NUM then %>
+  朝食
+  <% when Constants::LUNCH_NUM then %>
+  昼食
+  <% when Constants::DINNER_NUM then %>
+  夕食
+  <% end %>
 </p>
 
 <p>
-  <strong>Menu:</strong>
+  <strong>メニュー:</strong>
   <%= @meal.menu %>
 </p>
 
 <p>
-  <strong>Multi ticket price:</strong>
+  <strong>橙食券価格:</strong>
   <%= @meal.multi_ticket_price %>
 </p>
 
 <p>
-  <strong>Single ticket price:</strong>
+  <strong>単食券価格:</strong>
   <%= @meal.single_ticket_price %>
 </p>
 
 <p>
-  <strong>Soldout:</strong>
-  <%= @meal.soldout %>
+  <strong>売り切れ:</strong>
+  <% if @meal.soldout %>
+  ◯
+  <% else %>
+  ×
+  <% end %>
 </p>
 
-<%= link_to 'Edit', edit_meal_path(@meal) %> |
-<%= link_to 'Back', meals_path %>
+<%= link_to '編集', edit_meal_path(@meal) %> |
+<%= link_to 'トップ', { controller: :meals, action: :top } %>
