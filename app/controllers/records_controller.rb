@@ -25,7 +25,7 @@ class RecordsController < ApplicationController
   # POST /records.json
   def create
     @record = Record.new(record_params)
-    @record.update(meal_id: Meal.todays_latest_meal.id)
+    @record.update(meal_id: Meal.todays_latest.id)
     
     respond_to do |format|
       if @record.save
