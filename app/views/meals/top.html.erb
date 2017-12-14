@@ -5,16 +5,17 @@
 <% if @meal.nil? %>
 <p>メニューの登録はありません</p>
 <% else %>
-<p>本日のメニューは<br>
-  <%= @menu.menu %><br>
+<p>本日のメニューは
+  <strong><%= @meal.menu %></strong>
   です<br>
 </p>
 <h2>最新の残食情報</h2>
-<% if @meal.menu.nil? %>
+<% latest_meal = @meal.records.latest %>
+<% if latest_meal.nil? %>
 <p>残食情報はありません</p>
 <% else %>
-<p><%= @meal.records.latest.time.strftime('%H時%M分') %>：<%= @record.left %></p>
+<p><%= latest_meal.time.strftime('%H時%M分') %>：<%= latest_meal.left %></p>
 <% end %>
-<% end %>
-
 <%= link_to '更新ページ', new_record_path %>
+<% end %>
+<%= link_to '寮食登録ページへ', new_meal_path %>
