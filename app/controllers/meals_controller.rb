@@ -81,29 +81,31 @@ class MealsController < ApplicationController
                                    :menu,
                                    :soldout)
 
-    m_params[:single_ticket_price] = single_ticket_price(m_params[:time_zone_num])
-    m_params[:multi_ticket_price] = multi_ticket_price(m_params[:time_zone_num])
+    m_params[:single_ticket_price] = single_ticket(m_params[:time_zone_num])
+    m_params[:multi_ticket_price] = multi_ticket(m_params[:time_zone_num])
     m_params
   end
 
-  def single_ticket_price(meal_time_zone_num)
+  #TODO single_ticketとmulti_ticketメソッドがcreate時に反映されない問題を解決
+  #
+  def single_ticket(meal_time_zone_num)
     case meal_time_zone_num
-    when 0 then
+    when Constants::BREAKFIRST_NUM then
       Constants::BREAKFIRST_SINGLE_TICKET
-    when 1 then
+    when Constants::LUNCH_NUM then
       Constants::LUNCH_SINGLE_TICKET
-    when 2 then
+    when Constants::DINNER_NUM then
       Constants::DINNER_SINGLE_TICKET
     end
   end
 
-  def multi_ticket_price(meal_time_zone_num)
+  def multi_ticket(meal_time_zone_num)
     case meal_time_zone_num
-    when 0 then
+    when Constants::BREAKFIRST_NUM then
       Constants::BREAKFIRST_MULTI_TICKET
-    when 1 then
+    when Constants::LUNCH_NUM then
       Constants::LUNCH_MULTI_TICKET
-    when 2 then
+    when Constants::DINNER_NUM then
       Constants::DINNER_MULTI_TICKET
     end
   end
