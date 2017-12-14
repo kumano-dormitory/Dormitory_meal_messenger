@@ -19,7 +19,15 @@
     <% @meals.each do |meal| %>
       <tr>
         <td><%= meal.date %></td>
-        <td><%= meal.time_zone %></td>
+        <td>
+	  <% case meal.time_zone_num %>
+	  <% when Constants::BREAKFIRST_NUM then %>
+	  朝食
+	  <% when Constants::LUNCH_NUM then %>
+	  昼食
+	  <% when Constants::DINNER_NUM then %>
+	  夕食
+	  <% end %></td>
         <td><%= meal.menu %></td>
         <td><%= meal.multi_ticket_price %></td>
         <td><%= meal.single_ticket_price %></td>
@@ -34,4 +42,5 @@
 
 <br>
 
-<%= link_to 'New Meal', new_meal_path %>
+<%= link_to '寮食登録', new_meal_path %>
+<%= link_to 'トップ', { controller: :meals, action: :top} %>
