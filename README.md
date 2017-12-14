@@ -74,7 +74,7 @@ $ bundle install --path vendor/bundle
 |meals table| |
 | ----- | ----- |
 | date | date |
-| time-zone | string |
+| time-zone-num | int | 0 = break first, 1 = lunch, 2 = dinner.
 | menu | string |
 | single-ticket-price | int |
 | multi-ticket-price | int |
@@ -86,4 +86,3 @@ $ bundle install --path vendor/bundle
 |meal-id| reference|
 |time| time|
 |left| int|
-
