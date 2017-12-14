@@ -69,3 +69,21 @@ $ cd Dormitory_meal_messenger
 $ git checkout -b rails origin/rails
 $ bundle install --path vendor/bundle
 ```
+
+## Datebase
+|meals table| |
+| ----- | ----- |
+| date | date |
+| time-zone | string |
+| menu | string |
+| single-ticket-price | int |
+| multi-ticket-price | int |
+| soldout | bool |
+
+
+|record table| |
+| --- | --- |
+|meal-id| reference|
+|time| time|
+|left| int|
+
