@@ -1,0 +1,20 @@
+<h1>Welcom to Kumano meal info page!</h1>
+
+<h2>本日の寮食</h2>
+
+<% if @meal.nil? %>
+<p>メニューの登録はありません</p>
+<% else %>
+<p>本日のメニューは<br>
+  <%= @menu.menu %><br>
+  です<br>
+</p>
+<h2>最新の残食情報</h2>
+<% if @meal.menu.nil? %>
+<p>残食情報はありません</p>
+<% else %>
+<p><%= @meal.records.latest.time.strftime('%H時%M分') %>：<%= @record.left %></p>
+<% end %>
+<% end %>
+
+<%= link_to '更新ページ', new_record_path %>
