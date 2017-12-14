@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Meal:</strong>
-  <%= @record.meal %>
+  <strong>メニュー:</strong>
+  <%= @record.meal.menu %>
 </p>
 
 <p>
-  <strong>Time:</strong>
-  <%= @record.time %>
+  <strong>時刻:</strong>
+  <%= @record.time.strftime('%H時%M分') %>
 </p>
 
 <p>
-  <strong>Left:</strong>
+  <strong>残食数:</strong>
   <%= @record.left %>
 </p>
 
 <%= link_to '編集', edit_record_path(@record) %>
-<%= link_to 'トップ', { controller: :meals, action: :top_page } %>
+<%= link_to 'トップ', { controller: :meals, action: :top } %>
