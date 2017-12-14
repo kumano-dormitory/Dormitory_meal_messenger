@@ -77,45 +77,33 @@ class MealsController < ApplicationController
   def meal_params
     m_params =
       params.require(:meal).permit(:date,
-                                   :time_zone,
+                                   :time_zone_num,
                                    :menu,
                                    :soldout)
 
-    m_params[:time_zone_num] = meal_time_zone_number(m_params[:time_zone])
-    m_params[:single_ticket_price] = single_ticket_price(m_params[:time_zone])
-    m_params[:multi_ticket_price] = multi_ticket_price(m_params[:time_zone])
+    m_params[:single_ticket_price] = single_ticket_price(m_params[:time_zone_num])
+    m_params[:multi_ticket_price] = multi_ticket_price(m_params[:time_zone_num])
     m_params
   end
 
-  def meal_time_zone_number(meal_time_zone)
-    case meal_time_zone
-    when '朝食' then
-      Constants::BREAKFIRST_NUM
-    when '昼食' then
-      Constants::LUNCH_NUM
-    when '夕食' then
-      Constants::DINNER_NUM
-    end
-  end
-
-  def single_ticket_price(meal_time_zone)
-    case meal_time_zone
-    when '朝食' then
+  def single_ticket_price(meal_time_zone_num)
+    case meal_time_zone_num
+    when 0 then
       Constants::BREAKFIRST_SINGLE_TICKET
-    when '昼食' then
+    when 1 then
       Constants::LUNCH_SINGLE_TICKET
-    when '夕食' then
+    when 2 then
       Constants::DINNER_SINGLE_TICKET
     end
   end
 
-  def multi_ticket_price(meal_time_zone)
-    case meal_time_zone
-    when '朝食' then
+  def multi_ticket_price(meal_time_zone_num)
+    case meal_time_zone_num
+    when 0 then
       Constants::BREAKFIRST_MULTI_TICKET
-    when '昼食' then
+    when 1 then
       Constants::LUNCH_MULTI_TICKET
-    when '夕食' then
+    when 2 then
       Constants::DINNER_MULTI_TICKET
     end
   end
