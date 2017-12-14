@@ -12,22 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :date %>
+    <%= form.label '日付' %>
     <%= form.date_select :date, id: :meal_date %>
   </div>
 
   <div class="field">
-    <%= form.label :time_zone %>
-    <%= form.text_field :time_zone, id: :meal_time_zone %>
+    <label><%= form.radio_button :time_zone_num, Constants::BREAKFIRST_NUM %>朝食</label>
+    <label><%= form.radio_button :time_zone_num, Constants::LUNCH_NUM %>昼食</label>
+    <label><%= form.radio_button :time_zone_num, Constants::DINNER_NUM %>夕食</label>
   </div>
 
   <div class="field">
-    <%= form.label :menu %>
+    <%= form.label 'メニュー' %>
     <%= form.text_field :menu, id: :meal_menu %>
   </div>
 
   <div class="field">
-    <%= form.label :soldout %>
+    <%= form.label '売り切れ' %>
     <%= form.check_box :soldout, id: :meal_soldout %>
   </div>
 
