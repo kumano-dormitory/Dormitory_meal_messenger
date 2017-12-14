@@ -1,3 +1,4 @@
+# coding: utf-8
 class Meal < ApplicationRecord
   has_many :records
   # ======= description about Meal table schema ===========
