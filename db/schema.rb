@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171105100104) do
+ActiveRecord::Schema.define(version: 20171104115423) do
 
   create_table "meals", force: :cascade do |t|
     t.date "date"
-    t.string "time_zone"
+    t.integer "time_zone_num"
     t.string "menu"
     t.integer "multi_ticket_price"
     t.integer "single_ticket_price"
     t.boolean "soldout"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "time_zone_num"
   end
 
   create_table "records", force: :cascade do |t|
