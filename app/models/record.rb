@@ -1,4 +1,8 @@
 class Record < ApplicationRecord
   belongs_to :meal
-  scope :latest_record, -> { order(:time).last }
+  scope :newer, -> { order(time: :desc) }
+
+  def self.latest
+    newer.first
+  end
 end

@@ -22,10 +22,9 @@ class MealsController < ApplicationController
   def edit
   end
 
-  # GET /top_page
-  def top_page
-    @meal = Meal.todays_latest_meal
-    @record = @meal.records.latest_record
+  # GET /top
+  def top
+    @meal = Meal.todays_latest
   end
   
   # POST /meals
